@@ -169,7 +169,7 @@ plt.show()
 # 6. Logarithmic-scale axis
 # default: basex = 10, basey = 10
 plt.plot(x,y)
-plt.xscale('log',basex=2)
+plt.xscale('log',base=2)
 plt.yscale('log')
 plt.show()
 
@@ -219,19 +219,40 @@ plt.show()
 # axis formats: ax.xaxis, ax.yaxis
 
 
+# Lecture 07
+# https://www.youtube.com/watch?v=HHZP0F3lf5M&list=PLem3bYZSADLL7JZ_UM9_2v8wO-dEh3j4k&index=7
+
 # Spines: graph의 경계선 특성을 control하는 메서드
 
 # ax.spines[loc]: loc = "top", "bottom", "left", "right"
 
+# Open-box plot: remove top and right spines (tick은 남음)
+# ax.spines["top"].set_visible(False)
+# ax.spines["right"].set_visible(False)
+
+# Thickness of spines
+# ax.spines["left"].set_linewidth(3)
+# ax.spines["bottom"].set_linewidth(3)
+
+# Color of spines
+# ax.spines["left"].set_color("r")
+
+ax = plt.gca()
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['bottom'].set_linewidth(1.0)
+ax.spines['left'].set_linewidth(1.0)
+ax.spines['left'].set_color("r")
+plt.tick_params(top=False, right=False)
+
+x = np.linspace(-100,100,2000)
+y = np.sin(x)
+plt.plot(x,y)
+plt.xlim(-6,6)
 
 
 
-
-
-
-
-
-
+# Ticks
 
 
 
